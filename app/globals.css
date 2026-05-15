@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030f1e;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +12,68 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    background: #ffffff !important;
+  }
+
+  .briefing-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid;
+    color: #0f172a !important;
+  }
+
+  /* Force color overrides for print */
+  .text-slate-300,
+  .text-slate-400 {
+    color: #334155 !important;
+  }
+
+  .text-white {
+    color: #0f172a !important;
+  }
+
+  .text-blue-400,
+  .text-blue-400\/70 {
+    color: #1d4ed8 !important;
+  }
+
+  .text-emerald-400,
+  .text-emerald-500 {
+    color: #059669 !important;
+  }
+
+  .text-red-400,
+  .text-red-500 {
+    color: #dc2626 !important;
+  }
+
+  .text-amber-400,
+  .text-amber-500 {
+    color: #d97706 !important;
+  }
+
+  /* SWOT grid print styles */
+  .bg-\[\#030f1e\] {
+    background: #f1f5f9 !important;
+  }
 }
