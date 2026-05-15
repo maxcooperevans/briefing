@@ -97,21 +97,31 @@ body {
     border-radius: 8px !important;
   }
 
-  /* Five Forces outer wrapper — allow page breaks inside so it isn't hidden */
+  /* Five Forces outer wrapper */
   .five-forces-section {
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 8px !important;
-    break-inside: auto;
-    page-break-inside: auto;
-    break-before: page;
   }
 
-  /* Individual force cards can avoid breaks */
+  /* Individual force cards */
   .five-forces-section .briefing-card {
     break-inside: avoid;
     page-break-inside: avoid;
     margin-bottom: 8px;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  /* Fix grids — overflow:hidden clips content in print */
+  .grid {
+    overflow: visible !important;
+  }
+
+  /* SWOT cells — replace gap-px background trick with explicit borders */
+  .swot-cell {
+    border: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
   }
 
   /* Section labels become proper headings */

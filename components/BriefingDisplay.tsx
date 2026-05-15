@@ -236,7 +236,7 @@ export default function BriefingDisplay({ briefing }: Props) {
         <SectionLabel>SWOT Analysis</SectionLabel>
         {briefing.swot ? (
           <FadeIn show={true}>
-            <div className="grid grid-cols-2 gap-px bg-white/[0.06] rounded-lg overflow-hidden print:grid-cols-2">
+            <div className="grid grid-cols-2 gap-px bg-white/[0.06] rounded-lg print:grid-cols-2 print:gap-2">
               <div className="swot-cell bg-[#030f1e] p-5">
                 <p className="text-[10px] font-mono tracking-widest uppercase text-emerald-400 mb-3">▲ Strengths</p>
                 <ul className="space-y-2">
