@@ -43,11 +43,19 @@ export default function Home() {
     <main className="min-h-screen bg-[#030f1e] text-white">
       {/* Nav */}
       <nav className="border-b border-white/[0.06] no-print">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-2.5">
-          <span className="flex h-2 w-2 rounded-full bg-blue-400 ring-4 ring-blue-400/20" />
-          <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400">
-            Briefing
-          </span>
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <span className="flex h-2 w-2 rounded-full bg-blue-400 ring-4 ring-blue-400/20" />
+            <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400">
+              Briefing
+            </span>
+          </div>
+          <a
+            href="https://www.maxcooperevans.com"
+            className="text-xs text-white/50 hover:text-white transition-colors"
+          >
+            ← Home
+          </a>
         </div>
       </nav>
 
