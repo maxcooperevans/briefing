@@ -15,6 +15,7 @@ Output ONLY newline-delimited JSON — one object per line, in this exact order,
 {"type":"marketMap","value":[{"name":"<competitor>","description":"<one line>"},{"name":"<competitor>","description":"<one line>"},{"name":"<competitor>","description":"<one line>"},{"name":"<competitor>","description":"<one line>"},{"name":"<competitor>","description":"<one line>"}]}
 {"type":"keyRisks","value":[{"title":"<risk>","explanation":"<one sentence>"},{"title":"<risk>","explanation":"<one sentence>"},{"title":"<risk>","explanation":"<one sentence>"}]}
 {"type":"investorAngle","value":"<2-3 sentences on what an investor would focus on>"}
+{"type":"fiveForces","value":{"competitiveRivalry":{"rating":"<Low|Medium|High>","explanation":"<2-3 sentences>"},"threatOfNewEntrants":{"rating":"<Low|Medium|High>","explanation":"<2-3 sentences>"},"bargainingPowerOfSuppliers":{"rating":"<Low|Medium|High>","explanation":"<2-3 sentences>"},"bargainingPowerOfBuyers":{"rating":"<Low|Medium|High>","explanation":"<2-3 sentences>"},"threatOfSubstitutes":{"rating":"<Low|Medium|High>","explanation":"<2-3 sentences>"}}}
 {"type":"swot","value":{"strengths":["<point>","<point>","<point>"],"weaknesses":["<point>","<point>","<point>"],"opportunities":["<point>","<point>","<point>"],"threats":["<point>","<point>","<point>"]}}`;
 
 export async function POST(request: NextRequest) {

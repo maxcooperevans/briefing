@@ -15,6 +15,19 @@ export interface SWOT {
   threats: string[];
 }
 
+export interface Force {
+  rating: 'Low' | 'Medium' | 'High';
+  explanation: string;
+}
+
+export interface FiveForces {
+  competitiveRivalry: Force;
+  threatOfNewEntrants: Force;
+  bargainingPowerOfSuppliers: Force;
+  bargainingPowerOfBuyers: Force;
+  threatOfSubstitutes: Force;
+}
+
 export interface Briefing {
   company: string;
   oneLiner: string;
@@ -22,5 +35,6 @@ export interface Briefing {
   marketMap: (Competitor | string)[];
   keyRisks: (Risk | string)[];
   investorAngle: string;
+  fiveForces: FiveForces;
   swot: SWOT;
 }

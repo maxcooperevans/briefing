@@ -3,6 +3,7 @@
 :root {
   --background: #030f1e;
   --foreground: #ffffff;
+  --accent: #1d4ed8;
 }
 
 @theme inline {
@@ -18,31 +19,96 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Print styles */
+/* ── Print cover ─────────────────────────────────────── */
+.print-cover {
+  display: none;
+}
+
+.print-cover-accent {
+  height: 6px;
+  background: linear-gradient(90deg, #1d4ed8 0%, #6366f1 100%);
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+.print-cover-label {
+  font-size: 10px;
+  font-family: monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+.print-cover-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.print-cover-sub {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+
+.print-cover-date {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+/* ── Print media ─────────────────────────────────────── */
 @media print {
+  @page {
+    size: A4;
+    margin: 18mm 22mm;
+  }
+
   .no-print {
     display: none !important;
+  }
+
+  .print-cover {
+    display: block !important;
   }
 
   body {
     background: #ffffff !important;
     color: #0f172a !important;
+    font-size: 12px;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   main {
     background: #ffffff !important;
+    padding: 0 !important;
   }
 
+  /* Cards */
   .briefing-card {
     background: #f8fafc !important;
     border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
     page-break-inside: avoid;
-    color: #0f172a !important;
+    break-inside: avoid;
   }
 
-  /* Force color overrides for print */
+  /* Section labels become proper headings */
+  .section-label {
+    color: #1d4ed8 !important;
+    font-size: 9px !important;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin-bottom: 10px !important;
+  }
+
+  /* Text colours */
   .text-slate-300,
   .text-slate-400 {
     color: #334155 !important;
@@ -69,11 +135,47 @@ body {
 
   .text-amber-400,
   .text-amber-500 {
-    color: #d97706 !important;
+    color: #b45309 !important;
   }
 
-  /* SWOT grid print styles */
+  /* SWOT grid cells */
+  .swot-cell {
+    background: #f1f5f9 !important;
+  }
+
   .bg-\[\#030f1e\] {
     background: #f1f5f9 !important;
+  }
+
+  /* Force rating badges */
+  .bg-emerald-500\/10 { background: #d1fae5 !important; }
+  .border-emerald-500\/20 { border-color: #6ee7b7 !important; }
+  .bg-amber-500\/10 { background: #fef3c7 !important; }
+  .border-amber-500\/20 { border-color: #fcd34d !important; }
+  .bg-red-500\/10 { background: #fee2e2 !important; }
+  .border-red-500\/20 { border-color: #fca5a5 !important; }
+
+  /* Number badges */
+  .bg-blue-500\/10 { background: #dbeafe !important; }
+  .border-blue-500\/20 { border-color: #93c5fd !important; }
+
+  /* Grid layout for print */
+  .print\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .print\:col-span-2 {
+    grid-column: span 2 / span 2 !important;
+  }
+
+  /* Spacing */
+  .mb-4 { margin-bottom: 12px !important; }
+  .gap-4 { gap: 12px !important; }
+  .gap-3 { gap: 10px !important; }
+
+  /* Avoid page breaks inside sections */
+  .grid {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }
