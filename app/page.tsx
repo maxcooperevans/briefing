@@ -40,7 +40,21 @@ export default function Home() {
 
       while (true) {
         const { done, value } = await reader.read();
-        if (done) break;
+        if (done) {
+          // Process anything left in the buffer (last line may have no trailing newline)
+          if (buffer.trim()) {
+            try {
+              const { type, value: val } = JSON.parse(buffer.trim());
+              if (type !== 'error') {
+                partial = { ...partial, [type]: val };
+                setBriefing({ ...partial });
+              }
+            } catch {
+              // ignore
+            }
+          }
+          break;
+        }
 
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split('\n');
