@@ -52,7 +52,7 @@ export default function Home() {
           </div>
           <a
             href="https://www.maxcooperevans.com"
-            className="text-xs text-white/50 hover:text-white transition-colors"
+            className="text-sm text-white hover:text-white/70 transition-colors"
           >
             ← Home
           </a>
