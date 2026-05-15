@@ -208,7 +208,7 @@ export default function BriefingDisplay({ briefing }: Props) {
       </div>
 
       {/* Porter's Five Forces */}
-      <div className="briefing-card rounded-xl border border-white/[0.07] bg-white/[0.03] p-6 mb-4">
+      <div className="five-forces-section rounded-xl border border-white/[0.07] bg-white/[0.03] p-6 mb-4">
         <SectionLabel>Porter&apos;s Five Forces</SectionLabel>
         {briefing.fiveForces ? (
           <FadeIn show={true}>
